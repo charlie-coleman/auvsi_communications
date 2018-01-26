@@ -9,9 +9,9 @@ serversocket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 
 host = socket.gethostname()
 
-port = 3142
+port = 3141
 
-serversocket.bind((host, port))
+serversocket.bind(('', port))
 
 serversocket.listen(5)
 while True:
