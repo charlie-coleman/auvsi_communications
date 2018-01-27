@@ -5,11 +5,11 @@ import datetime
 
 clientsocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-host = socket.gethostbyname('raspberrypi')
+#host = socket.gethostbyname('charlie-Inspiron-5535')
 
 port = 3141
 
-clientsocket.connect((host, port))
+clientsocket.connect(('192.168.0.139', port))
 
 filename = "./testfiles/100MB.bin"
 recievedSpeed = False
@@ -21,7 +21,7 @@ with open("./testfiles/100MB_dl.bin", 'wb') as file_to_write:
 		data = clientsocket.recv(1024)
 		if not data:
 			break
-		file_to_write.write(data)
+#		file_to_write.write(data)
 		hold = data
 	file_to_write.close()
 speed = hold.decode('ascii')

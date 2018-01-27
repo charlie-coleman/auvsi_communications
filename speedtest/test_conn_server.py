@@ -9,14 +9,15 @@ serversocket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 
 host = socket.gethostname()
 
-port = 3141
+port = 3142
 
-serversocket.bind(('', port))
+serversocket.bind(('0.0.0.0', port))
 
 serversocket.listen(5)
 while True:
 	clientsocket,addr = serversocket.accept()
 
+	print("Connection accepted. Transmitting file")
 	startTime = datetime.datetime.utcnow()
 
 	reqFile = clientsocket.recv(1024)
