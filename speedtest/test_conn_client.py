@@ -26,6 +26,6 @@ with open("./testfiles/100MB_dl.bin", 'wb') as file_to_write:
 	file_to_write.close()
 speed = hold.decode('ascii')
 
-print('Upload Speed: ', speed, "MB/s")
+print('Download Speed: ', speed, "MB/s")
 
 clientsocket.close()

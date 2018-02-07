@@ -31,7 +31,7 @@ while True:
 
 	speed = 100.0 / totalTime.total_seconds()
 	speedstr = str(speed).encode('ascii')
-	print("Download Speed: ", speedstr.decode('ascii'), "MB/s")
+	print("Upload Speed: ", speedstr.decode('ascii'), "MB/s")
 
 	time.sleep(1)
 	clientsocket.send(speedstr)
