@@ -1,5 +1,8 @@
 import socket
 import datetime
+import time
+
+# Test filed downloaded from https://speed.hetzner.de/
 
 serversocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 serversocket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
@@ -23,9 +26,13 @@ while True:
 			clientsocket.sendall(data)
 
 	endTime = datetime.datetime.utcnow()
+
 	totalTime = endTime-startTime
 
-	speed = 64.0 / totalTime.total_seconds()
+	speed = 100.0 / totalTime.total_seconds()
 	speedstr = str(speed).encode('ascii')
 	print("Download Speed: ", speedstr.decode('ascii'), "MB/s")
+
+	time.sleep(1)
+	clientsocket.send(speedstr)
 	clientsocket.close();
