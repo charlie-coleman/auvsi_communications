@@ -2,6 +2,7 @@ import socket
 import datetime
 
 serversocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+serversocket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 
 host = socket.gethostname()
 
@@ -24,9 +25,7 @@ while True:
 	endTime = datetime.datetime.utcnow()
 	totalTime = endTime-startTime
 
-	speed = 100.0 / totalTime.total_seconds()
+	speed = 64.0 / totalTime.total_seconds()
 	speedstr = str(speed).encode('ascii')
 	print("Download Speed: ", speedstr.decode('ascii'), "MB/s")
-	while True:
-		clientsocket.sendall(speedstr)
 	clientsocket.close();
