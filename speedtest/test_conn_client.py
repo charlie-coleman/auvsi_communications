@@ -5,9 +5,9 @@ import datetime
 
 clientsocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-host = socket.gethostname()
+host = socket.gethostbyname('raspberrypi')
 
-port = 3142
+port = 3141
 
 clientsocket.connect((host, port))
 
