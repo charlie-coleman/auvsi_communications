@@ -1,6 +1,5 @@
 import socket
 import datetime
-import time
 
 # Test filed downloaded from https://speed.hetzner.de/
 
@@ -9,8 +8,8 @@ serversocket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 
 host = socket.gethostname()
 
-port = 3142
-file_num = 0
+port = 3141
+
 serversocket.bind((host, port))
 
 serversocket.listen(5)
@@ -18,7 +17,7 @@ while True:
     clientsocket,addr = serversocket.accept()
 
     print("Recieved connection, downloading image")
-    filename = "./downloaded/image"+str(file_num)+".jpg"
+    filename = "./downloaded/image_"+datetime.datetime.now().strftime("%Y%m%d_%H:%M:%S")+".jpg"
 
     with open(filename, 'wb') as file_to_write:
         while True:
@@ -28,5 +27,4 @@ while True:
             file_to_write.write(data)
         file_to_write.close()
 
-    file_num += 1
     clientsocket.close();

@@ -3,10 +3,10 @@ import os
 import time
 
 host = socket.gethostname()
-port = 3142
+port = 3141
 
 while True:
-    # os.system("gphoto2 --capture-image-and-download --filename ./images/image_to_send.jpg")
+    os.system("gphoto2 --capture-image-and-download --filename ./images/image_to_send.jpg")
 
     clientsocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     clientsocket.connect((host, port))
