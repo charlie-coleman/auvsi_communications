@@ -17,7 +17,7 @@ while True:
     clientsocket,addr = serversocket.accept()
 
     print("Recieved connection, downloading image")
-    filename = "./downloaded/image_"+datetime.datetime.now().strftime("%Y%m%d_%H:%M:%S")+".jpg"
+    filename = "./images/image_"+datetime.datetime.now().strftime("%Y%m%d_%H:%M:%S")+".jpg"
 
     with open(filename, 'wb') as file_to_write:
         while True:

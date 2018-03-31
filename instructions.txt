@@ -11,11 +11,18 @@ SPEEDTEST:
 
 CAMERA:
 --------------------------
-1. Navigate to ~/auvsi_communications/camera on the RPi
-2. Run "python3 rpiCameraTest.py"
-3. Camera should continuously takes picture, about every 3 seconds
-4. To stop the pictures, hit Ctrl+Z or unplug the camera
+1. Navigate to ~/auvsi_communications/camera on the groundstation
+2. Ensure the RPi and camera are plugged in and turned on.
+3. SSH into the RPi, navigate to ~/auvsi_communications/camera
+4. Navigate to the same folder on the groundstation
+5. Run "python3 groundstation.py" on the groundstation
+6. Run "python3 rpi.py" on the RPi
+7. Hit enter to stop the RPi, Ctrl+C to stop groundstation
+
+If you run "sh camera.sh" on the groundstation, it should ssh and start the
+proper scripts, but there isn't any way to stop it from taking pics, so stay on
+the safe side and start things manually
 
 
-The SSH password should be raspberry
+The SSH password is "auvsirpi"
 
