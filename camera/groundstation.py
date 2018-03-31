@@ -10,7 +10,7 @@ host = socket.gethostname()
 
 port = 3141
 
-serversocket.bind((host, port))
+serversocket.bind(('0.0.0.0', port))
 
 serversocket.listen(5)
 while True:
@@ -26,5 +26,5 @@ while True:
                 break
             file_to_write.write(data)
         file_to_write.close()
-
+    print('Download Completed')
     clientsocket.close();
