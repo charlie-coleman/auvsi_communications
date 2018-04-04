@@ -33,6 +33,8 @@ def download_thread(lfs):
     		clientsocket.close()
     		time.sleep(0.5)
     except KeyboardInterrupt:
+        print('Interrupted')
+
 def input_thread(a_list):
 	input()
 	a_list.append(True)

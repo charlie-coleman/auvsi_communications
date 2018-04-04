@@ -9,7 +9,7 @@ serversocket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 
 host = socket.gethostname()
 if (len(sys.argv) > 0):
-    port = int(sys.argv[1])
+    port = int(sys.argv[0])
 else:
     port = 3141
 
