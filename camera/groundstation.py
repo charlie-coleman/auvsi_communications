@@ -34,4 +34,5 @@ try:
         clientsocket.close()
 except KeyboardInterrupt:
     print('Interrupted')
+    serversocket.shutdown(1)
     serversocket.close()
