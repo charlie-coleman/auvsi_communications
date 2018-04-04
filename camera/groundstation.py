@@ -8,8 +8,8 @@ serversocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 serversocket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 
 host = socket.gethostname()
-if (len(sys.argv) > 0):
-    port = int(sys.argv[0])
+if (len(sys.argv) > 1):
+    port = int(sys.argv[1])
 else:
     port = 3141
 

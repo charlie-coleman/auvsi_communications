@@ -6,7 +6,7 @@ import socket
 import sys
 
 host = socket.gethostname()
-if (len(sys.argv) > 0):
+if (len(sys.argv) > 1):
     port = sys.argv[0]
 else:
     port = 3141
